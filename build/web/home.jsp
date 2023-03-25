@@ -1,17 +1,31 @@
-<%-- 
-    Document   : Home
-    Created on : Mar 2, 2023, 10:11:38 AM
-    Author     : Malki Ediriweera
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Index Page</title>
+        <!-- Link bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Link jquery and Javascript -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        
+        <title>User Dashboard</title>
     </head>
+    
+    <!--    Check if session empty or not-->
+    <%
+    if(session == null || session.getAttribute("user") == null){
+        response.sendRedirect("login.jsp");
+    }
+    %> 
+    
     <body>
-        <h1>Hello World!</h1>
+        <!-- User page content here -->
+        <h1>Welcome User!</h1>
+        <a href="logout.jsp" class="btn btn-danger">logout</a>
+        
+        
     </body>
 </html>
