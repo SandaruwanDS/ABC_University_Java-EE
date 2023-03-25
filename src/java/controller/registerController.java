@@ -37,6 +37,7 @@ public class registerController extends HttpServlet {
         String userPhone = request.getParameter("userPhone");
         String userNic = request.getParameter("userNic");
         String userPwd = request.getParameter("userPwd");
+        String userRole = "user";
 
         PrintWriter out = response.getWriter();   
 //        out.println(userName); check data catch
@@ -49,13 +50,14 @@ public class registerController extends HttpServlet {
         try {
             con = DatabaseConnection.connectToDatabase ("jdbc:mysql://localhost/abc_university_p","root","");
         
-            pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd) VALUES (?,?,?,?,?)");
+            pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd,userRole) VALUES (?,?,?,?,?,?)");
 
             pst.setString(1,userName);
             pst.setString(2,userEmail);
             pst.setInt(3,Integer.parseInt(userPhone));
             pst.setString(4,userNic);
             pst.setString(5,userPwd);
+            pst.setString(6,userRole);
             pst.executeUpdate();
 
         } catch (SQLException ex) {
