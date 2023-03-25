@@ -48,16 +48,27 @@ public class loginController extends HttpServlet {
             pst.setString(2, userPwd); 
             ResultSet rs = pst.executeQuery();
             if(rs.next()){
+                String userRole = rs.getString("userRole");
                 HttpSession session = request.getSession();
-                session.setAttribute("UE", userEmail);
-                request.setAttribute("message","Hello " + userEmail);
-                response.sendRedirect("home.jsp");
+//                session.setAttribute("UE", userEmail);
+                
+                 if(userRole.equals("admin")) {
+                    session.setAttribute("admin", userEmail);
+                    request.setAttribute("message","Hello admin " + userEmail);
+                    response.sendRedirect("admin.jsp");
+                } else {
+                    session.setAttribute("user", userEmail);
+                    request.setAttribute("message","Hello " + userEmail);
+                    response.sendRedirect("home.jsp");
+                } 
+
+  
                 
             }else{
                  request.setAttribute("Message", "Login Failed please check your User Email and Password");
                  request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-            
+     
             
          } catch (SQLException ex) {
             Logger.getLogger(registerController.class.getName()).log(Level.SEVERE, null, ex);
@@ -68,4 +79,4 @@ public class loginController extends HttpServlet {
 
     
 
-}
+    }
