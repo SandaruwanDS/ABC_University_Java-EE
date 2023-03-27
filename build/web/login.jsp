@@ -8,6 +8,30 @@
     <!-- Link jquery and Javascript -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+            function validateForm() {
+                
+                var email = document.forms["loginForm"]["userEmail"].value;
+                var password = document.forms["loginForm"]["userPwd"].value;
+                var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                            
+                if (!emailRegex.test(email)) {
+                    alert("Please enter a valid email address");
+                    return false;
+                }
+                if (password.length < 8) {
+                    alert("Please enter a valid Password");
+                    return false;
+                }
+                
+            }
+        </script>
+    
+    
+    
+    
+    
 </head>
 <body>
     <div class="container" style="margin-top:80px;background-image:url('images/Boat.jpg');background-size:cover;background-position:center;padding-left:20px;padding-top:20px;padding-right:20px;padding-bottom:20px">
@@ -18,7 +42,7 @@
                    Login Section
                 </div>
                 <div class="card-body">
-                   <form action="loginController" method="POST">
+                   <form action="loginController" method="POST" onsubmit=" return validateForm();" name="loginForm">
                        <div class="form-group mt-3">
                             <label for="">Enter Your Email</label>
                             <input type="text" name="userEmail" id="userName" class="form-control" placeholder="Enter Your Email">
