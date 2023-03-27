@@ -8,6 +8,8 @@ package controller;
 import beans.DatabaseConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,6 +40,7 @@ public class loginController extends HttpServlet {
         String userEmail = request.getParameter("userEmail");
         String userPwd = request.getParameter("userPwd");
         String errorMsg = null;
+        String encryptedPwd = null;
         
         if (userEmail == null || !userEmail.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
             errorMsg = "Please enter a valid email address.";
@@ -54,10 +57,30 @@ public class loginController extends HttpServlet {
             Connection con;
             try {
                 con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_p","root","");
+                
+                // Password encryption using MD5
+                     try {  
+                            MessageDigest md = MessageDigest.getInstance("MD5");
+                            md.update(userPwd.getBytes());
+                            byte[] digest = md.digest();
+                            StringBuilder sb = new StringBuilder();
+                            for (byte b : digest) {
+                                sb.append(String.format("%02x", b & 0xff));
+                            }
+                            encryptedPwd = sb.toString();
+                    }   
+                    catch (NoSuchAlgorithmException e)   
+                    {  
+                        e.printStackTrace();  
+                    }  
+                
+                
+                
                 pst = con.prepareStatement("SELECT * FROM users WHERE userEmail=? AND userPwd=?");
 
                 pst.setString(1, userEmail);
-                pst.setString(2, userPwd); 
+                pst.setString(2, encryptedPwd);
+               // pst.setString(2, userPwd); 
                 ResultSet rs = pst.executeQuery();
                 if(rs.next()){
                     String userRole = rs.getString("userRole");
