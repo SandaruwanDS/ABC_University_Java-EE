@@ -42,6 +42,7 @@ public class registerController extends HttpServlet {
         String userPwd = request.getParameter("userPwd");
         String userRole = "user";
         String errorMsg = null;
+        String encryptedPwd = null;
 
          // Server-side form validation
         if (userName == null || userName.trim() .isEmpty() ) {
@@ -75,8 +76,7 @@ public class registerController extends HttpServlet {
                             for (byte b : digest) {
                                 sb.append(String.format("%02x", b & 0xff));
                             }
-                            String encryptedPwd = sb.toString();
-
+                            encryptedPwd = sb.toString();
                     }   
                     catch (NoSuchAlgorithmException e)   
                     {  
@@ -91,8 +91,8 @@ public class registerController extends HttpServlet {
                     pst.setString(2,userEmail);
                     pst.setInt(3,Integer.parseInt(userPhone));
                     pst.setString(4,userNic);
-                    pst.setString(5,userPwd);
-//                    pst.setString(5,encryptedPwd);
+                  //  pst.setString(5,userPwd);
+                    pst.setString(5,encryptedPwd);
                     pst.setString(6,userRole);
                     pst.executeUpdate();
 
