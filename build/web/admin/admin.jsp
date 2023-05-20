@@ -50,9 +50,9 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="#">View Users</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#">Add User</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#">Edit/Delete User</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="../viewUsers"><h5 class="font-weight mb-0">View Users</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add User</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete User</h5></a></li>
                             </ul>
                         </div>
                     </li>
@@ -65,8 +65,9 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">View Students</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Student</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete Student</h5></a></li>
                             </ul>
                         </div>
                     </li>
@@ -79,8 +80,14 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">View Degree</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Degree</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete Degree</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">View Subjects</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Subject</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete Subject</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Subject to Degree</h5></a></li>
+
                             </ul>
                         </div>
                     </li>
@@ -109,11 +116,11 @@
                         <div class="col-md-12 grid-margin">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h4 class="font-weight-bold mb-0">RoyalUI Dashboard</h4>
+                                    <h4 class="font-weight-bold mb-0">Admin Dashboard</h4>
                                 </div>
                                 <div>
                                     <button type="button" class="btn btn-primary btn-icon-text btn-rounded">
-                                        <i class="ti-clipboard btn-icon-prepend"></i>Report
+                                        <ion-icon name="print-outline"></ion-icon> &nbsp;  Report
                                     </button>
                                 </div>
                             </div>
@@ -123,7 +130,7 @@
                         <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Sales</p>
+                                    <h3 class="font-weight text-md-center mb-0">Sales</h3>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
                                         <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
