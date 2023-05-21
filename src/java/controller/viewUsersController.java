@@ -32,7 +32,7 @@ public class viewUsersController extends HttpServlet {
             con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_p", "root", "");
 
             // Execute the SELECT query
-            pst = con.prepareStatement("SELECT * FROM users");
+            pst = con.prepareStatement("SELECT * FROM users WHERE userRole ='user'");
             ResultSet rs = pst.executeQuery();
 
             // Store the result set in a List<User> object
