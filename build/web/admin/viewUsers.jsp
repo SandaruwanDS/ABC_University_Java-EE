@@ -31,10 +31,24 @@
             <div class="alert alert-danger" role="alert">
                 User successfully Deleted!
             </div>
+
+            <script>
+            // Clear success parameter from URL
+            if (window.location.search.includes('success')) {
+                history.replaceState({}, document.title, window.location.pathname);
+            }
+            </script>
+
             <% } else if ("true".equals(request.getParameter("editSuccess"))) { %>
             <div class="alert alert-primary" role="alert">
                 User successfully Updated!
             </div>
+            <script>
+            // Clear editSuccess parameter from URL
+            if (window.location.search.includes('editSuccess')) {
+                history.replaceState({}, document.title, window.location.pathname);
+            }
+            </script>
             <%
                 }
             %>
@@ -81,7 +95,7 @@
                             </td>
                         </form>
 
-                        <form method="post" action="deleteUserController">
+                        <form method="post" action="deleteUser">
                             <td>
                                 <input type="hidden" name="userId" value="<%= user.getId()%>"/>
                                 <button type="submit" class="btn btn-danger btn-rounded ">Delete&nbsp;&nbsp; <i class="fa fa-trash-alt"></i></button>
