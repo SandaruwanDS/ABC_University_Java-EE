@@ -42,9 +42,18 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="../viewUsers"><h5 class="font-weight mb-0">View Users</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../addUsers"><h5 class="font-weight mb-0">Add User</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete User</h5></a></li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="addUser.jsp"><h5>Add New User</h5></a>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="../viewUsers" method="get">
+                                        <button class="btn nav-link"><h5>View /Edit Users</h5></button>
+                                    </form>
+                                </li>
+
+
+
                             </ul>
                         </div>
                     </li>
