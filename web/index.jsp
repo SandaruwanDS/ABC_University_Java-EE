@@ -1,28 +1,17 @@
-    Author     : PC
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index Page</title>
-
-
-        <%@include file="components/styles.jsp" %>
 
     </head>
     <body>
 
-        <!-- include navbar-->
-            <div class="container position-sticky z-index-sticky top-0">
-                <div class="row">
-                    <div class="col-12">
 
-                        <!-- include navbar-->
-                        <%@ include file="layout/navbar.jsp" %>
-                    </div>
-                </div>
-            </div>
+        <!-- Navbar -->
+        <%@include file="layout/navbar.jsp" %>
 
 
         <div class="jumbotron p-3 p-md-5 text-white  rounded bg-dark mt-5"
@@ -37,8 +26,8 @@
         </div>
 
 
-        <div class="container">
-            <div class="row mb-2 ">
+                    <div class="container">
+                        <div class="row mb-2 ">
 
                 <div class="col-md-3 mt-5 ">
                     <div class="card flex-md-row mb-4 box-shadow h-md-250" >
@@ -104,7 +93,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+                            </div>
 
 
 
@@ -116,5 +105,7 @@
 
     <!--        import footer-->
     <%@ include file="layout/footer.jsp" %>
+
     </body>
+
 </html>
