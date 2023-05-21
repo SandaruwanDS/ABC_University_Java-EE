@@ -17,7 +17,7 @@
         }
     %>
     <body>
-        <%@ include file="../layout/navbarAdminView.jsp" %>
+        <%@ include file="../layout/navbarAdmin.jsp" %>
 
 
         <div class="container" style="margin-top:0px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
@@ -36,10 +36,16 @@
 
             <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
                 <div class="card-header">
+                    <div class="container">
+                        <a class="btn btn-primary btn-icon-text btn-rounded mb-2" href="admin.jsp">
+                            <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
+                        </a>
+                    </div>
+
                     Add User
                 </div>
                 <div class="card-body">
-                    <form action="../addUsers" method="post">
+                    <form class="forms-sample "action="../addUsers" method="post">
                         <div class="form-group mt-2">
                             <label for="userName">Enter Your Name</label>
                             <input type="text" name="userName" id="userName" placeholder="Enter Your Name" class="form-control"
