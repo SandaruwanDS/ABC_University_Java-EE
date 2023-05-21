@@ -24,11 +24,7 @@
         <%@ include file="../layout/navbarAdminView.jsp" %>
 
 
-        <div class="container-fluid">
-            <a class="btn btn-primary btn-icon-text btn-rounded mt-3" href="admin/admin.jsp">
-                <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
-            </a>
-        </div>
+
         <div class="container" style="margin-top:0px;background-size:cover;background-position:center;">
             <%--    display alert if success--%>
             <% if ("true".equals(request.getParameter("success"))) { %>
@@ -45,11 +41,16 @@
 
             <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
                 <div class="card-header">
+                    <div class="container">
+                        <a class="btn btn-primary btn-icon-text btn-rounded mb-2" href="admin/admin.jsp">
+                            <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
+                    </a>
+                </div>
 
                     Users
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped">
+                    <table class="table ">
                         <tr>
                             <th>User ID</th>
                             <th>Username</th>
@@ -76,14 +77,14 @@
                         <form method="post" action="editUserForm">
                             <td>
                                 <input type="hidden" name="userId" value="<%= user.getId()%>"/>
-                                <button type="submit" class="btn btn-warning">Edit&nbsp;&nbsp; <i class="fa fa-edit"></i></button>
+                                <button type="submit" class="btn btn-warning btn-rounded ">Edit&nbsp;&nbsp; <i class="fa fa-edit"></i></button>
                             </td>
                         </form>
 
                         <form method="post" action="deleteUserController">
                             <td>
                                 <input type="hidden" name="userId" value="<%= user.getId()%>"/>
-                                <button type="submit" class="btn btn-danger">Delete&nbsp;&nbsp; <i class="fa fa-trash-alt"></i></button>
+                                <button type="submit" class="btn btn-danger btn-rounded ">Delete&nbsp;&nbsp; <i class="fa fa-trash-alt"></i></button>
                             </td>
                         </form>
 
