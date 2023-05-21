@@ -17,8 +17,8 @@
         <link href="../css/nucleo-icons.css" rel="stylesheet" >
         <link href="../css/nucleo-svg.css" rel="stylesheet" >
                 <link href="../css/nucleo-svg.css" rel="stylesheet" >
-                <link id="pagestyle" href="../css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                <!--                <link id="pagestyle" href="../css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" >-->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!--                 Link jquery and Javascript -->
         <script src="../js/jquery.js"></script>
         <script src="../js/bootstrap.min.js"></script>
