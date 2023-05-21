@@ -27,6 +27,12 @@
             <div class="alert alert-success" role="alert">
                 User successfully added!
             </div>
+            <script>
+           // Clear success parameter from URL
+           if (window.location.search.includes('success')) {
+               history.replaceState({}, document.title, window.location.pathname);
+           }
+            </script>
             <% } else if ("false".equals(request.getParameter("success"))) { %>
             <div class="alert alert-danger" role="alert">
                 Error!
@@ -48,13 +54,12 @@
                     <form class="forms-sample "action="../addUsers" method="post">
                         <div class="form-group mt-2">
                             <label for="userName">Enter Your Name</label>
-                            <input type="text" name="userName" id="userName" placeholder="Enter Your Name" class="form-control"
-                                   required="">
+                            <input type="text" name="userName" id="userName" placeholder="Enter Your Name" class="form-control">
                         </div>
                         <div class="form-group mt-2">
                             <label for="userEmail">Enter Your Email Address</label>
                             <input type="email" name="userEmail" id="userEmail" placeholder="Enter Your Email"
-                                   class="form-control">
+                                   class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
                             <label for="userPwd">Please Enter Your Password</label>
