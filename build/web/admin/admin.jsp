@@ -18,15 +18,7 @@
         <!-- include navbar-->
 
         <%@ include file="../layout/navbarAdmin.jsp" %>
-
-
-
         <!-- Admin page content here -->
-
-
-
-
-
 
         <!-- partial -->
         <div class="container-fluid page-body-wrapper mt-0 ">
@@ -51,7 +43,7 @@
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="../viewUsers"><h5 class="font-weight mb-0">View Users</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add User</h5></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="../addUsers"><h5 class="font-weight mb-0">Add User</h5></a></li>
                                 <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete User</h5></a></li>
                             </ul>
                         </div>
