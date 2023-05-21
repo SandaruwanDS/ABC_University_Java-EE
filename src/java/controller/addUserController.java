@@ -7,7 +7,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.NoSuchAlgorithmException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +26,10 @@ import java.util.logging.Logger;
  */
 @WebServlet(name = "addUserController", urlPatterns = {"/addUsers"})
 public class addUserController extends HttpServlet {
+
+    Connection con;
     PreparedStatement pst;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,22 +39,22 @@ public class addUserController extends HttpServlet {
         String userPhone = request.getParameter("userPhone");
         String userNic = request.getParameter("userNic");
         String userPwd = request.getParameter("userPwd");
-
+        String userRole = "user";
         PrintWriter out = response.getWriter();
 
-        Connection con;
         try {
             String encryptedPwd = PasswordEncryptor.encryptPassword(userPwd);
 
             con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_p", "root", "");
 
-            pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd) VALUES (?,?,?,?,?)");
+            pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd,userRole) VALUES (?,?,?,?,?,?)");
 
             pst.setString(1, userName);
             pst.setString(2, userEmail);
             pst.setInt(3, Integer.parseInt(userPhone));
             pst.setString(4, userNic);
             pst.setString(5, encryptedPwd);
+            pst.setString(6, userRole);
             pst.executeUpdate();
 
             con.close();
@@ -66,7 +68,7 @@ public class addUserController extends HttpServlet {
         String message = "Success";
 
         request.setAttribute("successMessage", message);
-        response.sendRedirect(request.getContextPath() + "/admin/addUsers.jsp?success=true");
+        response.sendRedirect(request.getContextPath() + "/admin/addUser.jsp?success=true");
 
     }
 }
