@@ -71,24 +71,6 @@ public class registerController extends HttpServlet {
                     // Password encryption using MD5
                     encryptedPwd = PasswordEncryptor.encryptPassword(userPwd);
 
-//                     try {
-//                            MessageDigest md = MessageDigest.getInstance("MD5");
-//                            md.update(userPwd.getBytes());
-//                            byte[] digest = md.digest();
-//                            StringBuilder sb = new StringBuilder();
-//                            for (byte b : digest) {
-//                                sb.append(String.format("%02x", b & 0xff));
-//                            }
-//                            encryptedPwd = sb.toString();
-//                    }
-//                    catch (NoSuchAlgorithmException e)
-//                    {
-//                        e.printStackTrace();
-//                    }
-                    
-                    
-                    
-                    
                     pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd,userRole) VALUES (?,?,?,?,?,?)");
                     pst.setString(1,userName);
                     pst.setString(2,userEmail);
