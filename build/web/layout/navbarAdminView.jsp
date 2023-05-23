@@ -39,7 +39,7 @@
 
 
         <!-- Navbar -->
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl position-sticky blur shadow-blur mt-0 left-auto top-1 z-index-sticky" id="navbarBlur" navbar-scroll="true">
+        <nav class="navbar fixed-top navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl position-sticky blur shadow-blur mt-0 left-auto top-1 z-index-sticky" id="navbarBlur" navbar-scroll="true">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="admin/admin.jsp">
