@@ -1,3 +1,4 @@
+<%@ page import="util.DashboardStatus" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -75,7 +76,7 @@
     <a class="nav-link" href="addStudent.jsp"><h5>Add New Student</h5></a>
 </li>
 <li class="nav-item">
-    <form action="../ViewStudents" method="get">
+    <form action="../viewStudents" method="get">
         <button class="btn nav-link"><h5>View / Edit Students</h5></button>
     </form>
 </li>
@@ -94,31 +95,37 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">View Degree</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Degree</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete Degree</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">View Subjects</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Subject</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Edit/Delete Subject</h5></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"><h5 class="font-weight mb-0">Add Subject to Degree</h5></a></li>
+                                <li class="nav-item">
+                                    <form action="addDegree.jsp" method="post">
+                                        <button class="btn nav-link"><h5>Add Degree</h5></button>
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="../viewDegree" method="get">
+                                        <button class="btn nav-link"><h5>View / Edit Degree</h5></button>
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="addSubject.jsp" method="get">
+                                        <button class="btn nav-link"><h5>Add Subject</h5></button>
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="../viewAllSubjects" method="get">
+                                        <button class="btn nav-link"><h5>View / Edit Subject</h5></button>
+                                    </form>
+                                </li>
+                                <!--                                <li class="nav-item">
+                                                                    <form action="../viewStudents" method="get">
+                                        <button class="btn nav-link"><h5>Add Subject to Degree</h5></button>
+                                    </form>
+                                                                </li>-->
 
                             </ul>
                         </div>
                     </li>
-
-
-
-
-
-
                 </ul>
             </nav>
-
-
-
-
-
-
 
 
 
@@ -144,10 +151,10 @@
                         <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="font-weight text-md-center mb-0">Sales</h3>
+                                    <h4 class="font-weight text-md-center mb-0">All Users</h4>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
-                                        <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getUserCount()%></h3>
+                                        <h2> <ion-icon name="person-outline"></ion-icon></h2>
                                     </div>
                                     <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -156,10 +163,11 @@
                         <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Revenue</p>
+                                    <h4 class="font-weight text-md-center mb-0">All Students</h4>
+
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">47033</h3>
-                                        <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getStudentCount()%></h3>
+                                        <h2><ion-icon name="people-outline"></ion-icon></h2>
                                     </div>
                                     <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -168,10 +176,10 @@
                         <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Downloads</p>
+                                    <h4 class="font-weight text-md-center mb-0">All Degrees</h4>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">40016</h3>
-                                        <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getDegreeCount()%></h3>
+                                        <h2><ion-icon name="school-outline"></ion-icon></h2>
                                     </div>
                                     <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -180,10 +188,10 @@
                         <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Returns</p>
+                                    <h4 class="font-weight text-md-center mb-0">All Subjects</h4>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3>
-                                        <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getSubjectCount()%></h3>
+                                        <h2><ion-icon name="book-outline"></ion-icon></h2>
                                     </div>
                                     <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
