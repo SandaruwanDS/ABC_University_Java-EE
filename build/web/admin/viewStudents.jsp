@@ -1,9 +1,9 @@
 <%-- 
-    Document   : viewUsers
+    Document   : viewStudents
     Created on : May 21, 2023, 10:52:15 AM
     Author     : PC
 --%>
-<%@ page import="bean.User" %>
+<%@ page import="bean.Student" %>
 <%@ page import="java.util.List" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View Users</title>
+        <title>View Students</title>
 
     </head>
     <%
@@ -29,7 +29,7 @@
             <%--    display alert if success--%>
             <% if ("true".equals(request.getParameter("success"))) { %>
             <div class="alert alert-danger" role="alert">
-                User successfully Deleted!
+                Student Deleted Successfully !
             </div>
 
             <script>
@@ -41,7 +41,7 @@
 
             <% } else if ("true".equals(request.getParameter("editSuccess"))) { %>
             <div class="alert alert-primary" role="alert">
-                User successfully Updated!
+                Student Updated Successfully !
             </div>
             <script>
             // Clear editSuccess parameter from URL
@@ -56,49 +56,64 @@
             <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
                 <div class="card-header">
                     <div class="container">
-                        <a class="btn btn-primary btn-icon-text btn-rounded mb-2" href="admin/admin.jsp">
-                            <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
-                    </a>
-                </div>
 
-                    Users
+                        <div class="row">
+                            <div class="col-sm">
+                                <a class="btn btn-info btn-icon-text btn-rounded mb-2" href="admin/admin.jsp">
+                                    <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
+                                </a>
+                            </div>
+                            <div class="col-sm">
+                                <div class="input-group pe-md-3 d-flex align-items-right" >
+                                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" placeholder="Type here...">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <h4 class="align-items-center mt-3">Students</h4>
+
                 </div>
                 <div class="card-body">
                     <table class="table ">
                         <tr>
-                            <th>User ID</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>NIC</th>
-                            <th>Phone Number</th>
+                            <th>Student Registration Number</th>
+                            <th>Student Name</th>
+                            <th>Student Email</th>
+                            <th>Student NIC</th>
+                            <th>Student Phone Number</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                         <tbody>
 
-                            <% for (User user : (List<User>) request.getAttribute("users")) {%>
+                            <% for (Student student : (List<Student>) request.getAttribute("students")) {%>
                             <tr>
-                                <td><%= user.getId()%>
+                                <td><%= student.getNumber()%>
                                 </td>
-                                <td><%= user.getName()%>
+                                <td><%= student.getName()%>
                                 </td>
-                                <td><%= user.getEmail()%>
+                                <td><%= student.getEmail()%>
                                 </td>
-                                <td><%= user.getNic()%>
+                                <td><%= student.getNic()%>
                                 </td>
-                                <td><%= user.getPhone()%>
+                                <td><%= student.getPhone()%>
                                 </td>
-                        <form method="post" action="editUserForm">
+                        <form method="post" action="editStudentForm">
                             <td>
-                                <input type="hidden" name="userId" value="<%= user.getId()%>"/>
-                                <button type="submit" class="btn btn-warning btn-rounded ">Edit&nbsp;&nbsp; <i class="fa fa-edit"></i></button>
+                                <input type="hidden" name="studentId" value="<%= student.getId()%>"/>
+                                <button type="submit" class="btn btn-warning btn-rounded btn-rounded ">Edit&nbsp;&nbsp; <i class="fa fa-edit"></i></button>
                             </td>
                         </form>
 
-                        <form method="post" action="deleteUser">
+                        <form method="get" action="deleteStudent">
                             <td>
-                                <input type="hidden" name="userId" value="<%= user.getId()%>"/>
-                                <button type="submit" class="btn btn-danger btn-rounded ">Delete&nbsp;&nbsp; <i class="fa fa-trash-alt"></i></button>
+                                <input type="hidden" name="studentId" value="<%= student.getId()%>"/>
+                                <button type="submit" class="btn btn-danger btn-rounded btn-rounded">Delete&nbsp;&nbsp; <i class="fa fa-trash-alt"></i></button>
                             </td>
                         </form>
 

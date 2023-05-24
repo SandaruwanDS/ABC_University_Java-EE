@@ -1,5 +1,5 @@
 <%-- 
-    Document   : addUsers
+    Document   : addStudent
     Created on : May 21, 2023, 10:58:12 AM
     Author     : PC
 --%>
@@ -25,7 +25,7 @@
             <%--    display alert if success--%>
             <% if ("true".equals(request.getParameter("success"))) { %>
             <div class="alert alert-success" role="alert">
-                User successfully added!
+                User added successfully !
             </div>
             <script>
            // Clear success parameter from URL
@@ -43,37 +43,44 @@
             <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
                 <div class="card-header">
                     <div class="container">
-                        <a class="btn btn-primary btn-icon-text btn-rounded mb-2" href="admin.jsp">
+                        <a class="btn btn-info btn-icon-text btn-rounded mb-2" href="admin.jsp">
                             <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
                         </a>
                     </div>
+                    <h4 class="align-items-center mt-3"> Add Student</h4>
 
-                    Add Student
                 </div>
                 <div class="card-body">
-                    <form class="forms-sample "action="../addStudent" method="post">
+                    <form class="forms-sample" action="../addStudents" method="post">
+                        <div class="form-group mt-2">
+                            <label for="studentReg">Student Registration Number</label>
+                            <input type="text" name="studentReg" id="userPhone" placeholder="Enter Student Registration Number"
+                                   class="form-control" required="">
+                        </div>
+
                         <div class="form-group mt-2">
                             <label for="userName">Student Name</label>
-                            <input type="text" name="userName" id="userName" placeholder="Enter Your Name" class="form-control">
+                            <input type="text" name="userName" id="userName" placeholder="Enter Student Name" 
+                                   class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
                             <label for="userEmail">Student Email Address</label>
-                            <input type="email" name="userEmail" id="userEmail" placeholder="Enter Your Email"
+                            <input type="email" name="userEmail" id="userEmail" placeholder="Enter Student Email"
                                    class="form-control" required="">
                         </div>
 
                         <div class="form-group mt-2">
                             <label for="userPhone">Student Contact Number</label>
-                            <input type="text" name="userPhone" id="userPhone" placeholder="Enter Your Phone"
-                                   class="form-control">
+                            <input type="text" name="userPhone" id="userPhone" placeholder="Enter Student Phone"
+                                   class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
                             <label for="userNic">Student NIC Number</label>
-                            <input type="text" name="userNic" id="userNic" placeholder="Enter Your NIC" class="form-control">
+                            <input type="text" name="userNic" id="userNic" placeholder="Enter Student NIC" class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
-                            <input type="submit" value="Add Student" name="btnSave" id="btnSave" class="btn btn-success">
-                            <input type="reset" class="btn btn-warning">
+                            <input type="submit" value="Add Student" name="btnSave" id="btnSave" class="btn btn-success btn-rounded">
+                            <input type="reset" class="btn btn-warning btn-rounded">
                         </div>
                     </form>
                 </div>

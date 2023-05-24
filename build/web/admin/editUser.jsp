@@ -26,7 +26,7 @@
             <%--    display alert if success--%>
             <% if ("true".equals(request.getParameter("success"))) { %>
             <div class="alert alert-success" role="alert">
-                User successfully added!
+                User Updated Successfully !
             </div>
             <% } else if ("false".equals(request.getParameter("success"))) { %>
             <div class="alert alert-danger" role="alert">
@@ -38,12 +38,12 @@
             <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
                 <div class="card-header">
                     <div class="container">
-                        <a class="btn btn-primary btn-icon-text btn-rounded mb-2" href="viewUsers?.jsp">
+                        <a class="btn btn-info btn-icon-text btn-rounded mb-2" href="viewUsers?.jsp">
                             <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
                         </a>
                     </div>
+                    <h4 class="align-items-center mt-3"> Edit User</h4>
 
-                    Edit User
                 </div>
                 <div class="card-body">
                     <form class="forms-sample "action="EditUsers" method="post">
@@ -72,7 +72,7 @@
                             <input type="text" name="userNic" id="userNic" placeholder="Enter Your NIC" class="form-control" value="${nic}">
                         </div>
                         <div class="form-group mt-2">
-                            <input type="submit" value="Update User" name="btnSave" id="btnSave" class="btn btn-success">
+                            <input type="submit" value="Update User" name="btnSave" id="btnSave" class="btn btn-success btn-rounded">
                         </div>
                     </form>
                 </div>

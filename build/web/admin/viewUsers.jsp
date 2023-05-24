@@ -29,7 +29,7 @@
             <%--    display alert if success--%>
             <% if ("true".equals(request.getParameter("success"))) { %>
             <div class="alert alert-danger" role="alert">
-                User successfully Deleted!
+                User Deleted successfully !
             </div>
 
             <script>
@@ -41,7 +41,7 @@
 
             <% } else if ("true".equals(request.getParameter("editSuccess"))) { %>
             <div class="alert alert-primary" role="alert">
-                User successfully Updated!
+                User Updated successfully !
             </div>
             <script>
             // Clear editSuccess parameter from URL
@@ -55,13 +55,28 @@
 
             <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
                 <div class="card-header">
-                    <div class="container">
-                        <a class="btn btn-primary btn-icon-text btn-rounded mb-2" href="admin/admin.jsp">
-                            <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
-                    </a>
-                </div>
 
-                    Users
+
+                    <div class="row">
+                        <div class="col-sm">
+                            <a class="btn btn-info btn-icon-text btn-rounded mb-2" href="admin/admin.jsp">
+                                <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
+                            </a>
+                        </div>
+                        <div class="col-sm">
+                            <div class="input-group pe-md-3 d-flex align-items-right" >
+                                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" placeholder="Type here...">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <h4 class="align-items-center mt-3"> Users</h4>
+
+
                 </div>
                 <div class="card-body">
                     <table class="table ">
