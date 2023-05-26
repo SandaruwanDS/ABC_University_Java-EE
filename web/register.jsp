@@ -40,7 +40,7 @@
                     alert("Password must be at least 8 characters long");
                     return false;
                 }
-                if (!phoneRegex.test(phone)) {
+                if (!phoneRegex.test(phone) || phone.length != 10 ) {
                     alert("Please enter a valid phone number");
                     return false;
                 }
@@ -67,6 +67,26 @@
             </div>
         </div>
     </div>
+
+                <%--    display alert if success--%>
+                <% if ("true".equals(request.getParameter("success"))) { %>
+                <div class="alert alert-success" role="alert">
+                    User Registration successfully !
+                </div>
+                <script>
+               // Clear success parameter from URL
+               if (window.location.search.includes('success')) {
+                   history.replaceState({}, document.title, window.location.pathname);
+               }
+                </script>
+                <% } else if ("false".equals(request.getParameter("success"))) { %>
+                <div class="alert alert-danger" role="alert">
+                    Error!
+                </div>
+                <%
+                }%>
+
+
 
 
             <main class="main-content  mt-0">
