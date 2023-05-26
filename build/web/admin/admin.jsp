@@ -156,7 +156,7 @@
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getUserCount()%></h3>
                                         <h2> <ion-icon name="person-outline"></ion-icon></h2>
                                     </div>
-                                    <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ms-1"><small>(30 days)</small></span></p>
+                                        <!--                                    <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ms-1"><small>(30 days)</small></span></p>-->
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getStudentCount()%></h3>
                                         <h2><ion-icon name="people-outline"></ion-icon></h2>
                                     </div>
-                                    <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ms-1"><small>(30 days)</small></span></p>
+                                        <!--                                    <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ms-1"><small>(30 days)</small></span></p>-->
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getDegreeCount()%></h3>
                                         <h2><ion-icon name="school-outline"></ion-icon></h2>
                                     </div>
-                                    <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
+                                        <!--                                    <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>-->
                                 </div>
                             </div>
                         </div>
@@ -193,13 +193,13 @@
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 mt-4"><%=DashboardStatus.getSubjectCount()%></h3>
                                         <h2><ion-icon name="book-outline"></ion-icon></h2>
                                     </div>
-                                    <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
+                                        <!--                                    <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>-->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
+                                        <!--                    <div class="row">
+                                                                <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title">Sales details</p>
@@ -371,8 +371,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
+                                                            </div>-->
+<div class="row">
                         <div class="col-md-12 grid-margin stretch-card">
                             <div class="card position-relative">
                                 <div class="card-body">
@@ -380,9 +380,9 @@
                                     <div class="row">
                                         <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-center">
                                             <div class="ml-xl-4">
-                                                <h1>33500</h1>
-                                                <h3 class="font-weight-light mb-xl-4">Sales</h3>
-                                                <p class="text-muted mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                                <h1><%=DashboardStatus.getAdminCount()%></h1>
+                                                <h3 class="font-weight-light mb-xl-4"> Admins </h3>
+                                                <p class="text-muted mb-2 mb-xl-0">The description would mention the specific number of admins associated with the system.</p>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-xl-9">
