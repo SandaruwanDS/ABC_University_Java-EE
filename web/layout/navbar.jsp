@@ -41,8 +41,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.jsp">
+                        <!--                        <li class="nav-item">
+                                                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.jsp">
                                 <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                                 Home
                             </a>
@@ -52,8 +52,8 @@
                                 <i class="fa fa-user opacity-6 text-dark me-1"></i>
                                 Profile
                             </a>
-                        </li>
-                        <!--                        <li class="nav-item">
+                                                </li>-->
+<!--                        <li class="nav-item">
                                                     <a class="nav-link me-2" href="../pages/sign-up.html">
                                 <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
                                 Sign Up
