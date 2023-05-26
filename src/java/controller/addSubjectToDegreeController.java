@@ -28,6 +28,8 @@ import bean.Subject;
  */
 @WebServlet(name = "addSubjectToDegreeController", urlPatterns = {"/addSubjectToDegree"})
 public class addSubjectToDegreeController extends HttpServlet {
+    Connection conn;
+    PreparedStatement pst1, pst2;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
