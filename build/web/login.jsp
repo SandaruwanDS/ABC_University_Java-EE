@@ -50,6 +50,37 @@
                         <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-8">
                                 <div class="card-header pb-0 text-left bg-transparent">
+
+
+                                    <div class="container">
+                                        <%--    display alert if success--%>
+
+                                        <% if (request.getAttribute("Message") != null) {
+                                                if (request.getAttribute("success") != null) {
+                                                    if (request.getAttribute("success").equals(true)) {
+                                        %>
+                                        <div class="alert alert-success" role="alert">
+                                            <%= request.getAttribute("Message")%>
+                                        </div>
+                                        <script>
+                                                // Clear success parameter from URL
+                                                if (window.location.search.includes('Message','success')) {
+                                                    history.replaceState({}, document.title, window.location.pathname);
+                                                }
+                                        </script>
+
+                                        <% }
+                                        } else {%>
+
+                                        <div class="alert alert-danger" role="alert">
+                                            <%= request.getAttribute("Message")%>
+                                        </div>
+                                        <% }
+                                            }%>
+
+                                    </div>
+
+
                                     <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
                                     <p class="mb-0">Enter your email and password to sign in</p>
                                 </div>
@@ -94,46 +125,6 @@
     </main>
 
 
-
-
-
-
-
-
-
-
-      <!--    <div class="container" style="margin-top:80px;background-image:url('images/Boat.jpg');background-size:cover;background-position:center;padding-left:20px;padding-top:20px;padding-right:20px;padding-bottom:20px">
-             <div class="row">
-           <div class="col-md-6">
-           <div class="card text-dark  mb-3" style="background-color:rgba(255, 255, 255, 0.9)">
-                <div class="card-header">
-                   Login Section
-                </div>
-                <div class="card-body">
-                   <form action="loginController" method="POST" onsubmit=" return validateForm();" name="loginForm">
-                       <div class="form-group mt-3">
-                            <label for="">Enter Your Email</label>
-                            <input type="text" name="userEmail" id="userName" class="form-control" placeholder="Enter Your Email">
-                       </div>
-
-                        <div class="form-group mt-3">
-                            <label for="">Enter Your Password</label>
-                           <input type="password" name="userPwd" id="userPwd" class="form-control" placeholder="Enter Your Password"> 
-                        </div>
-
-                        <div class="form-group mt-3">
-                            <input type="submit" class="btn btn-primary btn-sm" name="btnLogin" style="background-color: black;">
-                            <input type="reset" class="btn btn-outline-warning btn-sm">
-                            <a class="btn btn-primary" href="index.jsp" role="button">Home</a>
-                            <a class="btn btn-primary" href="register.jsp" role="button" 
-                               onclick="window.location='register.jsp'">Register</a>
-                        </div>
-                   </form>
-                </div>
-                </div>
-           </div>
-       </div>
-          </div>-->
 
     <%@ include file="layout/footer.jsp" %>
 
