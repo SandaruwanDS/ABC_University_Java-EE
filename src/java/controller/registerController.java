@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller;
 
 import bean.DatabaseConnection;
@@ -42,27 +38,11 @@ public class registerController extends HttpServlet {
         String userNic = request.getParameter("userNic");
         String userPwd = request.getParameter("userPwd");
         String userRole = "user";
-        String errorMsg = null;
         String encryptedPwd = null;
 
-         // Server-side form validation
-//        if (userName == null || userName.trim() .isEmpty() ) {
-//            errorMsg = "Please enter a valid user name.";
-//        } else if (userEmail == null || !userEmail.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
-//            errorMsg = "Please enter a valid email address.";
-//        } else if (userPhone == null || !userPhone.matches("^\\d{10}$")) {
-//            errorMsg = "Please enter a valid phone number.";
-//        } else if (userNic == null || !userNic.matches("^\\d{9}[Vv]$")) {
-//            errorMsg = "Please enter a valid NIC number.";
-//        } else if (userPwd == null || userPwd.length() < 8 ||  userPwd.trim().isEmpty() ) {
-//            errorMsg = "Please enter a valid password.";
-//        }
-//
-//        if (errorMsg == null) {
-        
-        
-            
-        
+        String msg = null;
+        boolean success = false;
+
                 PrintWriter out = response.getWriter();   
                 Connection con;
                 try {
@@ -76,33 +56,24 @@ public class registerController extends HttpServlet {
                     pst.setString(2,userEmail);
                     pst.setInt(3,Integer.parseInt(userPhone));
                     pst.setString(4,userNic);
-                  //  pst.setString(5,userPwd);
-                    pst.setString(5,encryptedPwd);
+                    pst.setString(5, encryptedPwd);
                     pst.setString(6,userRole);
                     pst.executeUpdate();
+
+                    msg = " Successfully registered. Please login !";
+                    success = true;
+                    con.close();
+                    pst.close();
 
                 } catch (SQLException ex) {
                     Logger.getLogger(registerController.class.getName()).log(Level.SEVERE, null, ex);
                     out.println("<h1> Somthing Went Wrong !!! </h1>");
                     return;
                 }
-                //response.sendRedirect("login.jsp");
-               // out.println("<h1> DONE !!! </h1>");
-               request.setAttribute("Message", "Hello " + userName + " your registration is successful. Now"
-                        + " you can login to the system");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
 
-        
-        
-//        } else {
-//            request.setAttribute("errorMsg", errorMsg);
-//
-//
-//            response.setContentType("text/html; charset=UTF-8");
-//            PrintWriter out = response.getWriter();
-//            out.println("<script type='text/javascript'> alert ('check your Search Condition'); </script>");
-//            request.getRequestDispatcher("register.jsp").forward(request, response);
-//
-//        }
+        request.setAttribute("Message", msg);
+        request.setAttribute("success", success);
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
+
     }
 }
