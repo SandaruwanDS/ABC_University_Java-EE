@@ -52,7 +52,7 @@ public class deleteSubjectController extends HttpServlet {
                 pst.executeUpdate();
                 con.close();
                 pst.close();
-                response.sendRedirect(request.getContextPath() + "/viewAllSubject?subDel=true");
+                response.sendRedirect(request.getContextPath() + "/viewAllSubjects?subDel=true");
             }
 
         } catch (SQLException ex) {
