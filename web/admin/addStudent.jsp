@@ -47,7 +47,7 @@
                             <ion-icon name="arrow-back-outline"></ion-icon> &nbsp;  Back
                         </a>
                     </div>
-                    <h4 class="align-items-center mt-3"> Add Student</h4>
+                    <h4 class="align-items-center mt-3"> Add Student </h4>
 
                 </div>
                 <div class="card-body">
@@ -60,23 +60,23 @@
 
                         <div class="form-group mt-2">
                             <label for="userName">Student Name</label>
-                            <input type="text" name="userName" id="userName" placeholder="Enter Student Name" 
+                            <input type="text" name="studentName" id="userName" placeholder="Enter Student Name"
                                    class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
                             <label for="userEmail">Student Email Address</label>
-                            <input type="email" name="userEmail" id="userEmail" placeholder="Enter Student Email"
+                            <input type="email" name="studentEmail" id="userEmail" placeholder="Enter Student Email"
                                    class="form-control" required="">
                         </div>
 
                         <div class="form-group mt-2">
                             <label for="userPhone">Student Contact Number</label>
-                            <input type="text" name="userPhone" id="userPhone" placeholder="Enter Student Phone"
+                            <input type="text" name="studentPhone" id="userPhone" placeholder="Enter Student Phone"
                                    class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
                             <label for="userNic">Student NIC Number</label>
-                            <input type="text" name="userNic" id="userNic" placeholder="Enter Student NIC" class="form-control" required="">
+                            <input type="text" name="studentNic" id="userNic" placeholder="Enter Student NIC" class="form-control" required="">
                         </div>
                         <div class="form-group mt-2">
                             <input type="submit" value="Add Student" name="btnSave" id="btnSave" class="btn btn-success btn-rounded">
